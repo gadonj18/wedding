@@ -16,6 +16,7 @@
 	</head>
 	<body>
 		<div id="header"><?php include(INC_DIR."header.php"); ?></div>
+		<?php if($_PAGE["flash"] !== "") echo "<div id='flash'>".trim($_PAGE["flash"])."</div>"; ?>
 		<div id="content"><?php echo $_PAGE["content"]; ?><div id="push"></div></div>
 		<div id="footer"><?php include(INC_DIR."footer.php"); ?></div>
 	</body>

@@ -8,6 +8,7 @@
 	define("CSS_DIR", BASE_DIR."css/");
 	define("JS_DIR", BASE_DIR."scripts/");
 	define("IMG_DIR", BASE_DIR."images/");
+	define("COMMONERROR", "Whoops! There appears to be an unexpected error!<br /><br />If the problem persists, email me at <a href='mailto:gadonj18@live.com'>gadonj18@live.com</a>");
 	
 	if(DEBUG) {
 		ini_set('display_errors', 1);
@@ -20,11 +21,34 @@
 	
 	$_PAGE = array(
 		"name" => "home.php",
+		"flash" => "",
 		"title" => "",
 		"content" => "",
 		"css" => array(),
 		"js" => array()
 	);
+	
+	if(isset($_POST["submit-myballs"]) && $_POST["submit-myballs"] === "Leave a Comment!") {
+		if(isset($_POST["ermahgerd"]) && strlen(trim($_POST["ermahgerd"])) > 0) {
+			$name = (isset($_POST["herp"]) && strlen(trim($_POST["herp"])) > 0 ? "'".esc($db, trim($_POST["herp"]))."'" : "NULL");
+			$email = (isset($_POST["derp"]) && strlen(trim($_POST["derp"])) > 0 ? "'".esc($db, trim($_POST["derp"]))."'" : "NULL");
+			$comment = "'".esc($db, $_POST["ermahgerd"])."'";
+			
+			$sql = "INSERT INTO comments (
+						ip_addr, name, email, comment
+					) VALUES (
+						'".esc($db, $_SERVER["REMOTE_ADDR"])."', ".$name.", ".$email.", ".$comment."
+					)";
+			if(!$db->query($sql)) {
+				emailError("Error inserting comment into database: ".$sql.PHP_EOL.PHP_EOL.$db->error);
+			}
+			emailComment($name, $email, $comment);
+			header("Location: ".$_SERVER["REQUEST_URI"]);
+			exit();
+		} else {
+			$_PAGE["flash"] = "Missing comment!";
+		}
+	}
 	
 	if(isset($_GET["page"])) {
 		switch($_GET["page"]) {

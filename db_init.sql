@@ -1,0 +1,25 @@
+CREATE TABLE comments (
+	comment_id INT NOT NULL AUTO_INCREMENT,
+	ip_addr VARCHAR(15) NOT NULL,
+	name VARCHAR(100) DEFAULT NULL,
+	email VARCHAR(100) DEFAULT NULL,
+	comment TEXT NOT NULL,
+	PRIMARY KEY (comment_id)
+) ENGINE=InnoDb;
+
+CREATE TABLE song_requests (
+	song_id INT NOT NULL AUTO_INCREMENT,
+	song_title VARCHAR(100) NOT NULL,
+	artist VARCHAR(100) DEFAULT NULL,
+	PRIMARY KEY (song_id)
+) ENGINE=InnoDb;
+
+CREATE TABLE song_votes (
+	vote_id INT NOT NULL AUTO_INCREMENT,
+	song_id INT NOT NULL,
+	ip_addr VARCHAR(15) NOT NULL,
+	`like` TINYINT(1) NOT NULL DEFAULT 0,
+	dislike TINYINT(1) NOT NULL DEFAULT 0,
+	PRIMARY KEY (vote_id),
+	KEY (song_id)
+) ENGINE=InnoDb;

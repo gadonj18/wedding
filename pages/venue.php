@@ -1,6 +1,6 @@
 <?php if(!defined("__JGWEDDING__")) die("No Access");
 	
-	$_PAGE["title"] = "Home";
+	$_PAGE["title"] = "Venue";
 	$_PAGE["js"][] = JS_DIR."jssor.slider.mini.js";
 	$_PAGE["js"][] = "https://maps.googleapis.com/maps/api/js";
 ?>

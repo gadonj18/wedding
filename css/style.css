@@ -1,5 +1,5 @@
 body { background-color: #fbebeb; font-size: 1.25em; }
-html, body { height: 100%; }
+html, body { height: 100%; font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif; }
 
 h1, h2, h3, h4, h5, h6 { font-family: 'Niconne', cursive; margin-top: 1em; }
 h6 { font-size: 1em; }
@@ -9,6 +9,8 @@ h3 { font-size: 4em; }
 h2 { font-size: 5em; }
 h1 { font-size: 6em; }
 p { margin-top: 1em; }
+a { text-decoration: none; color: black; font-weight: bold; }
+a:hover { text-decoration: none; }
 
 /* HEADER */
 #title { width: 100%; height: 150px; text-align: center; margin-bottom: 15px; }
@@ -18,8 +20,12 @@ p { margin-top: 1em; }
 #menu li a { text-decoration: none; color: black; }
 #menu li a:hover, #menu li.active a { color: #ecbbc0; cursor: pointer; }
 
+/* FLASH */
+#flash { text-align: center; color: red; font-weight: bold; }
+
 /* CONTENT */
 #content { width: 70%; margin: 0 auto; margin-bottom: 200px; }
+#content a { font-size: 1.2em; }
 
 /* VENUE */
 #venue_info { float:left; width: 45%;}
@@ -36,12 +42,24 @@ p { margin-top: 1em; }
 #book_golf, #book_spa{ float: left; width: 45%; }
 #book_spa { margin-left: 10%; }
 
+/* ACCOMMODATIONS */
+div.hotel { display: inline-block; width: 45%; padding-right: 50px; }
+div.hockley  { width: 100%; text-align: center; }
+div.hockley img { width: 24%; margin: 0; padding: 0; border: 0; }
+
+/* MUSIC */
+#request_list { width: 100%; margin-top: 30px; }
+#request_list td, #request_list th { border-bottom: 1px solid #CCC; padding: 10px 10px; text-align: left; }
+#request_list th { font-weight: bold; }
+span.like:hover, span.dislike:hover { cursor: pointer; }
+span.like, span.dislike { font-weight: bold; }
+
 /* FOOTER */
 #footer > div { display: inline-block; height: 100%; width: 20%; text-align: center; color: #BBB; padding: 20px; vertical-align: middle; font-size: 1.25em; }
 #footer { width: 100%; background-color: #333; position: fixed; top: 100%; margin-top: -150px; height: 150px; }
 #footer_names {  }
-#footer_location a { color: #BBB; text-decoration: none; }
+#footer_location a { color: #BBB; text-decoration: none; font-weight: normal; }
 #footer_comment div { margin-top:5px; }
-#footer_comment #name { float: left; }
-#footer_comment #email { float: right; }
-#footer_comment #comment { width: 100%; margin-top: 5px; height: 50px; }
+#footer_comment #herp { float: left; }
+#footer_comment #derp { float: right; }
+#footer_comment #ermahgerd { width: 100%; margin-top: 5px; height: 50px; }
