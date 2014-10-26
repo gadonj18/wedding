@@ -1,0 +1,47 @@
+body { background-color: #fbebeb; font-size: 1.25em; }
+html, body { height: 100%; }
+
+h1, h2, h3, h4, h5, h6 { font-family: 'Niconne', cursive; margin-top: 1em; }
+h6 { font-size: 1em; }
+h5 { font-size: 2em; }
+h4 { font-size: 3em; }
+h3 { font-size: 4em; }
+h2 { font-size: 5em; }
+h1 { font-size: 6em; }
+p { margin-top: 1em; }
+
+/* HEADER */
+#title { width: 100%; height: 150px; text-align: center; margin-bottom: 15px; }
+#menu { background-color: white; text-align: center; padding: 20px 0px; margin-bottom: 30px; }
+#menu li { display: inline; padding: 5px 20px; border-right: 1px dotted black; font-size: 34px; font-family: 'Niconne', cursive; }
+#menu li.last { border-right: none; }
+#menu li a { text-decoration: none; color: black; }
+#menu li a:hover, #menu li.active a { color: #ecbbc0; cursor: pointer; }
+
+/* CONTENT */
+#content { width: 70%; margin: 0 auto; margin-bottom: 200px; }
+
+/* VENUE */
+#venue_info { float:left; width: 45%;}
+#hockley_slider { float: left; position: relative; top: 0px; left: 0px; margin: 0 auto; width: 45%; margin-left: 5%; }
+#hockley_slider :hover { cursor: default; }
+#venue_map ul { margin: 10px 0px; }
+#venue_map li { display: inline; padding: 5px 20px; }
+#venue_map li.map_link { font-weight: bold; color: #555; }
+#venue_map li.map_link:hover { cursor:pointer; }
+#venue_map input { width: 25%; }
+#map_canvas { width: 100%; height: 500px; margin: 0 auto; }
+#venue_bookings { margin-top: 40px; margin-bottom: 20px;}
+#venue_bookings a { text-decoration: none; color: #555; font-weight: bold; }
+#book_golf, #book_spa{ float: left; width: 45%; }
+#book_spa { margin-left: 10%; }
+
+/* FOOTER */
+#footer > div { display: inline-block; height: 100%; width: 20%; text-align: center; color: #BBB; padding: 20px; vertical-align: middle; font-size: 1.25em; }
+#footer { width: 100%; background-color: #333; position: fixed; top: 100%; margin-top: -150px; height: 150px; }
+#footer_names {  }
+#footer_location a { color: #BBB; text-decoration: none; }
+#footer_comment div { margin-top:5px; }
+#footer_comment #name { float: left; }
+#footer_comment #email { float: right; }
+#footer_comment #comment { width: 100%; margin-top: 5px; height: 50px; }
